@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Math</title>
+</head>
+<body>
+	<input type="number" name="">
+<button type="button">Sortea</button>
+	<script>
+		var $n = document.querySelector('input');
+		var $btn = document.querySelector('button');
+		$btn.addEventListener('click',function(){
+			if($n.value){
+				debugger;
+			alert(sortear($n.value));
+		}
+		});
+		function sortear(n){
+			
+				return Math.floor(Math.random()*n);
+			
+			
+		}
+
+
+	</script>
+
+</body>
+</html>

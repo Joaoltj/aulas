@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom 4 </title>
+</head>
+<body>
+	<input placeholder="Digite seu nome"  type="text" id="txtNome" >
+	<div id="msg"></div>
+	<script type="text/javascript">
+
+		function escrever(){
+			var nome = "João";
+			var sobrenome = "Santos";
+
+			var $input  = document.querySelector('#txtNome');
+			$input.value=nome+" "+sobrenome;
+			$input.readOnly=true;
+
+
+gwt
+		}
+		
+		
+	</script>
+	<button onclick="escrever()">Escrever</button>
+
+</body>
+</html>

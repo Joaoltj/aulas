@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Problema</title>
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-12 offset-md-5 offset-sm-4">
+					<h1>Escreva!</h1>
+				</div>
+			</div>
+			<form action="#" method="POST">
+				<div class="form-group">
+					<textarea class="form-control" maxLength="200"></textarea>
+				</div>
+				<div style="display: none;" id="restaContainer"  class="form-group">
+					Restam <span  class="badge badge-info badge-pill"></span> Caracteres
+				</div>
+			</form>
+		</div>
+		<script type="text/javascript">
+			
+				
+				var $textarea = document.querySelector('textarea');
+				var $resta = document.querySelector('span');
+				var maximo = $textarea.maxLength;
+				mostrarCaracteres(maximo);
+				$resta.parentNode.style.display = "block";
+				
+				$textarea.addEventListener('input',checarTamanho);
+
+				function checarTamanho(e){
+					var quantDigitados = maximo - this.value.length;
+					mostrarCaracteres(quantDigitados);
+					
+					if(quantDigitados <0){
+						var novoTexto ='';
+						mostrarCaracteres(0);
+						
+						for(let i =0;i <maximo;i++){
+						 	novoTexto +=$textarea.value[i];
+						}
+						$textarea.value='';
+						$textarea.value=novoTexto;
+						
+					}
+				}
+
+				function mostrarCaracteres(texto){
+						$resta.textContent = texto;
+				}
+
+
+			
+		</script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+	</body>
+</html>

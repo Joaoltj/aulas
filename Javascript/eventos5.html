@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EVENTOS</title>
+</head>
+<body>
+	<button id="bt1" onclick="clicar()">Botão 1</button>
+	<button id="bt2">Botão 2</button>
+	<button id="bt3" onclick="alert('cl')">Botão 3</button>
+	<div class="container">
+		<h1>Delegação</h1>
+
+		<div id="d1" style="background: red; padding:25px;">
+			texto dentro da div
+			<span style="background: yellow;">texto dentro do span</span>
+		</div>
+
+	</div>
+
+	<div class="container">
+		<ul>
+			<li>Lista 1</li>
+			<li>Lista 2</li>
+			<li>Lista 3</li>
+		</ul>
+
+	</div>
+
+
+
+	<script type="text/javascript">
+		var $ul = document.querySelector('ul');
+		var $lis = document.querySelectorAll("li");
+
+		// var x = 0;
+		// while($lis[x]){
+		// 	$lis[x].addEventListener('click',function(e){
+
+		// 		console.log("Clicou na li");
+		// 		e.stopPropagation();
+
+		// 	});
+		// 	x++;
+		// }
+		
+		$ul.addEventListener('click',function(e){
+			e.stopPropagation();
+
+			//console.log(this);
+			//console.log(e.currentTarget);
+			//console.log(e.target);
+			console.log(e.target.nodeName);
+			if(e.target.nodeName === "LI"){
+				alert("Cliclou na li");
+			}
+
+
+		});
+
+
+	</script>
+</body>
+</html>

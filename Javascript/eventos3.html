@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>EVENTOS</title>
+</head>
+<body>
+	<button id="bt1" onclick="clicar()">Botão 1</button>
+	<button id="bt2">Botão 2</button>
+	<button id="bt3" onclick="alert('cl')">Botão 3</button>
+
+	<div class="container">
+		<h1>Propagação de Eventos</h1>
+
+		<div id="d1" style="background: red; padding:25px;">
+			texto dentro da div
+			<span style="background: yellow;">texto dentro do span</span>
+		</div>
+
+	</div>
+
+
+
+	<script type="text/javascript">
+
+
+		var $d1 = document.getElementById("d1");
+		var $d1Span = document.querySelector("#d1 span");
+
+		$d1.addEventListener('click',function(){
+			console.log('Click no $d1');
+		},true);
+		
+		$d1Span.addEventListener('click',function(){
+			console.log('Click no $d1Span');
+		},true);
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Date</title>
+    </head>
+    <body>
+
+    </body>
+    <script type="text/javascript">
+
+        var dataAtual = new Date();
+        dataAtual.setSeconds(0);
+        dataAtual.setMinutes(0);
+        dataAtual.setMilliseconds(0);
+        dataAtual.setHours(0);
+        var dataAtualTS = dataAtual.getTime();
+        var anoAtual = dataAtual.getFullYear();
+
+
+        var dataNiver = new Date(anoAtual,8,16);
+        var dataNiverTS = dataNiver.getTime();
+        
+        if(dataNiverTS < dataAtualTS){
+            var dataNiver = new Date(anoAtual+1,8,16);
+        var dataNiverTS = dataNiver.getTime();
+        }
+
+        const UM_DIA = 24 * 60*60*1000;
+        var diferenca = dataNiverTS -dataAtual;
+        var dias = diferenca/UM_DIA;
+
+        if(dias == 0){
+            alert("Parabens");
+        }else{
+            alert("Faltas "+dias+" para seu aniversario");
+        }
+
+    </script>
+</html>

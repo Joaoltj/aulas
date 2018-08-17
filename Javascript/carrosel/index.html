@@ -1,0 +1,122 @@
+<html>
+    <head>
+        <title>Carousel</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <main>
+        <section class="carousel">
+            <div class="carousel-inner">
+            <div class="carousel-item"><a href=""><img src="1.jpg"></a></div>
+            <div class="carousel-item"><a href=""><img src="2.jpg"></a></div>
+            <div class="carousel-item"><a href=""><img src="3.png"></a></div>
+            <div class="carousel-item"><a href=""><img src="4.png"></a></div>
+        </div>
+        <button class="carousel-btn carousel-btn-prev">&lt;</button>
+        <button class="carousel-btn carousel-btn-next">&gt;</button>
+        <ul class='carousel-paginacao'></ul>
+        </section>
+
+    </main>
+    </div>
+
+    <script>
+
+        var $carousel = document.querySelector('.carousel'); 
+        var $carouselInner = document.querySelector('.carousel-inner'); 
+        var $carouselItens = document.querySelectorAll('.carousel-item');
+        var $buttonGeral = document.querySelectorAll('.carousel-btn');
+        var $btnNext = document.querySelector('.carousel-btn-next');
+        var $btnPrev = document.querySelector('.carousel-btn-prev');
+        var $btnPrev = document.querySelector('.carousel-btn-prev');
+        var $carouselPaginacao = document.querySelector('.carousel-paginacao'); 
+        var slideAtual = 0;
+        var qtdSlide = $carouselItens.length;
+        montarPaginacao(qtdSlide);
+        $carouselPaginacao.firstChild.classList.add('atual')
+
+        function montarPaginacao(){
+            for(let i = 0 ; i < qtdSlide;i++){
+                var $li = document.createElement('li');
+                $li.addEventListener('click',function(){
+                   mostrarSlide(i);
+                 });
+                $carouselPaginacao.appendChild($li);
+            }
+        }
+
+        function adicionarMarcacao(i){
+          
+            document.querySelector('.atual').classList.remove('atual');  
+            $carouselPaginacao.children[i].classList.add('atual');
+            slideAtual = i;
+        }
+        var intervalo = null;
+        function iniciarIntervalo(){
+            intervalo = setInterval(function(){
+                slideAtual++;
+                if(slideAtual >= 4)slideAtual=0
+                mostrarSlide(slideAtual);
+                adicionarMarcacao(slideAtual);
+      
+            },4000);
+        }
+        iniciarIntervalo();
+        function limparIntervalo(){
+            clearInterval(intervalo);
+        }
+       
+
+
+        
+        $btnNext.style.display='inline-block';
+        $btnPrev.style.display='inline-block';
+        $carousel.style.overflow = 'hidden';
+        
+        //Eventos
+        $btnPrev.addEventListener('click',prev);
+        $btnNext.addEventListener('click',next);
+        
+
+        function next(){
+            ++slideAtual;
+            mostrarSlide(slideAtual); 
+           
+                
+              
+        }
+    
+     setupButton(slideAtual);
+        
+        function prev(){
+         --slideAtual; 
+         mostrarSlide(slideAtual);
+           
+
+        }
+        
+
+        function setupButton(slideAtual){
+          
+            $btnPrev.disabled=!slideAtual>0;
+            $btnNext.disabled = slideAtual === qtdSlide-1;  
+        }
+
+        function mostrarSlide(slideAtual){
+            
+            setupButton(slideAtual);
+            console.log('sa');
+            limparIntervalo();
+            var largura = getComputedStyle($carouselItens[0]).width;
+            largura = parseInt(largura);
+            var novaPosicao = slideAtual * largura * -1;
+            $carouselInner.style.transform='translateX('+novaPosicao+'px)';
+            adicionarMarcacao(slideAtual);
+             iniciarIntervalo();
+        }
+      
+     
+        
+    </script>
+    </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Excercicio</title>
+</head>
+<body>
+	<script type="text/javascript">
+		(function(){
+			'use strict';
+			 window.Pessoa = function(n,s){
+				var nome = n || "Jośe";
+				var sobrenome = s || "Santos";
+
+				this.setNome = function(n){
+					nome = n;
+				}
+				this.getNome = function(){
+					return nome;
+				}
+				this.setSobrenome = function(s){
+					sobrenome = s;
+				}
+				this.getSobrenome = function(){
+					return sobrenome;
+				}
+			}
+
+		})()
+
+		var pessoas =[new Pessoa("João","Santos"),new Pessoa("Lucas","Santos"),new Pessoa("Tiago","Santos")];
+		for(let pessoa of pessoas){
+			console.log(pessoa.getNome()+" "+pessoa.getSobrenome());
+		}
+		var r =  Math.floor(Math.random(10)*10)+1;
+		alert(r);
+	</script>
+</body>
+</html>

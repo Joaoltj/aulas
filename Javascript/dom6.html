@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notas</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<table class="table table-dark table-striped" >
+		<thead >
+			<tr>
+				<th>Aluno</th>
+				<th>Nota 1</th>
+				<th>Nota 2</th>
+				<th>Nota 3</th>
+				<th>Nota 4</th>
+				<th>Média</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>José Campos</td>
+				<td class="n1">10.0</td>
+				<td class="n2">10.0</td>
+				<td class="n3">10.0</td>
+				<td class="n4">10.0</td>
+				<td class="media"></td>
+			</tr>
+				<tr>
+				<td>João Santos</td>
+				<td class="n1">10.0</td>
+				<td class="n2">10.0</td>
+				<td class="n3">10.0</td>
+				<td class="n4">10.0</td>
+				<td class="media"></td>
+			</tr>
+				<tr>
+				<td>Larissa Santos</td>
+				<td class="n1">7.0</td>
+				<td class="n2">7.2</td>
+				<td class="n3">9.5</td>
+				<td class="n4">2.0</td>
+				<td class="media"></td>
+			</tr>
+			</tr>
+				<tr>
+				<td>Antonia da Silva</td>
+				<td class="n1">3.0</td>
+				<td class="n2">5.0</td>
+				<td class="n3">2.0</td>
+				<td class="n4">8.0</td>
+				<td class="media"></td>
+			</tr>
+			</tr>
+				<tr>
+				<td>Carlos Batista</td>
+				<td class="n1">7.0</td>
+				<td class="n2">8.0</td>
+				<td class="n3">4.0</td>
+				<td class="n4">9.0</td>
+				<td class="media"></td>
+			</tr>
+			</tr>
+			<tr>
+				<td>Maria Silva</td>
+				<td class="n1">6.0</td>
+				<td class="n2">6.0</td>
+				<td class="n3">6.0</td>
+				<td class="n4">6.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Francisco Antonio</td>
+				<td class="n1">9.0</td>
+				<td class="n2">9.0</td>
+				<td class="n3">8.5</td>
+				<td class="n4">9.5</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Rodolfo dos Santos</td>
+				<td class="n1">1.0</td>
+				<td class="n2">2.0</td>
+				<td class="n3">3.0</td>
+				<td class="n4">10.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Maria Silva</td>
+				<td class="n1">10.0</td>
+				<td class="n2">10.0</td>
+				<td class="n3">10.0</td>
+				<td class="n4">10.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Miro no teu cú</td>
+				<td class="n1">6.0</td>
+				<td class="n2">6.0</td>
+				<td class="n3">6.0</td>
+				<td class="n4">6.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Moso Silva</td>
+				<td class="n1">6.0</td>
+				<td class="n2">6.0</td>
+				<td class="n3">6.0</td>
+				<td class="n4">6.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Mopa Araujo</td>
+				<td class="n1">5.5</td>
+				<td class="n2">6.5</td>
+				<td class="n3">4.5</td>
+				<td class="n4">6.5</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Gustavo Leonardo</td>
+				<td class="n1">8.0</td>
+				<td class="n2">8.0</td>
+				<td class="n3">8.0</td>
+				<td class="n4">8.0</td>
+				<td class="media"></td>
+			</tr>
+		</tbody>
+	</table>
+<script type="text/javascript">
+	var $listaN1 = document.getElementsByClassName('n1');
+	var $listaN2 = document.getElementsByClassName('n2');
+	var $listaN3 = document.getElementsByClassName('n3');
+	var $listaN4 = document.getElementsByClassName('n4');
+	var $medias = document.getElementsByClassName('media');
+ var lista = [1,1];
+ 	for(let i = 0; i<$medias.length;i++){
+ 		let n1 = parseFloat($listaN1[i].textContent);
+ 		let n2 = parseFloat($listaN2[i].textContent);
+ 		let n3 = parseFloat($listaN3[i].textContent);
+ 		let n4 = parseFloat($listaN4[i].textContent);
+
+ 		let media = (n1+n2+n3+n4)/4;
+ 		$medias[i].textContent=media;
+ 		if(media == 10){
+ 			$medias[i].style.background='#16a085';
+ 		}
+ 		else if(media > 6){
+			$medias[i].style.background='#40739e';
+ 		}else{
+ 			$medias[i].style.background='#e74c3c';
+ 		}
+ 	}
+</script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>

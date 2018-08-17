@@ -1,0 +1,63 @@
+<html>
+    <style>
+        body{
+            background:#34495e;
+        }
+     .pop{
+         position: relative;
+         top:-400px;
+         width: 400px;
+         height:0px;
+         display: table-cell;
+         vertical-align:middle;
+         text-align: center;
+         text-align: center;
+         font-weight:bold;
+            color:white;
+         background-color:black;
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px;
+        -webkit-transition: top 2s;
+   
+        transition:top 2s;
+    
+     }
+    
+     
+    </style>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    
+    <body>
+        <center>
+        <div  id="pop" class="pop">
+                <h1>Eu e meu ego, destruindo o mundo</h1>
+            
+                
+        </div>
+    </center>
+    </body>
+    <script>
+       
+            var exibir = true;
+            $pop = document.querySelector(".pop");
+
+            var t = setTimeout(function(){
+               
+                $pop.style.top = "-400px";
+                clearTimeout(t);
+                    clearTimeout(t2);
+            },12000);
+            
+            var t2 = setTimeout(function(){
+                $pop.style.height = "300px";
+                $pop.style.top = "0px";
+                    
+            },4000);
+            
+           
+            
+        </script>
+</html>

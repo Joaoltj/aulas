@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var nome = prompt("Digite seu nome:");
+		var nomeFormatado = formatarNome(nome);
+
+		// var arrNome = nome.split(' ');
+		// var novoNome = '';
+		// for(let i = arrNome.length-1;i >= 0;i--){
+		// 	novoNome += arrNome[i]+' ';
+		// }
+		alert(nomeFormatado);
+
+		function formatarNome(nome){
+			var ultimoEspaco = nome.lastIndexOf(' ');
+			if(ultimoEspaco <= 0){
+				return ;
+			}
+
+			var ultimoNome = nome.slice(ultimoEspaco+1);
+			var primeiroNome= nome.slice(0,ultimoEspaco);
+			return ultimoNome+', '+primeiroNome;
+		}
+	</script>
+
+</body>
+</html>

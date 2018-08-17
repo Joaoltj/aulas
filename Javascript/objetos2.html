@@ -1,0 +1,22 @@
+<script type="text/javascript">
+	
+window.Caneta= function(preco,cor){
+		//publico
+		this.preco = preco || 1;
+		//privado
+		var color = cor || "Azul";
+		this.mudarCor = function(cor){
+			color = cor;
+		}
+		this.pegarCor = function(){
+			return color;
+		}
+
+	}
+
+var caneta = new Caneta(2,"Azul");
+	
+	
+	
+
+</script>

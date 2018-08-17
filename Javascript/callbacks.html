@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Callbacks</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function foo(){
+			console.log('Foo');
+		}
+		function executa(callback){
+			if(callback && typeof callback === 'function')callback();
+		}
+		executa(foo);
+		executa(function teste(){
+			console.log('Teste');
+		});
+		executa(function(){
+			console.log('teste 2');
+		});
+		document.addEventListener('click',function clicou(){
+			console.log('Clicou');
+			console.log();
+		});
+	</script>
+</body>
+</html>

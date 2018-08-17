@@ -1,0 +1,62 @@
+<html>
+    <style>
+     .pop{
+         position: relative;
+         
+         width: 400px;
+         height:300px;
+         line-height: 100px;
+         text-align: center;
+         text-align: center;
+         font-weight:bold;
+            color:white;
+         background-color:#2b2b2b;
+         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px;
+        -webkit-transition: top 2s;
+   
+        transition:top 2s;
+    
+     }
+    
+     
+    </style>
+    <head>
+        <title>
+
+        </title>
+    </head>
+    
+    <body>
+        <center>
+        <div  id="pop" class="pop">
+                <h1>Relógio</h1><br>
+                <h2>O que é Lorem Ipsum?</h2>
+                
+        </div>
+    </center>
+    </body>
+    <script>
+
+        var $h2 = document.querySelector('h2');
+        
+        setInterval(function(){
+            $h2.innerHTML = getHoras(new Date());
+        });
+
+        function getHoras(data){
+            var hora = formatarHoras(data.getHours());
+            var minutos = formatarHoras(data.getMinutes());
+            var segundos = formatarHoras(data.getSeconds());
+            return hora+':'+minutos+':'+segundos;
+        }
+        function formatarHoras(h){
+            return h < 10 ? '0' + h : h;
+        }
+
+
+
+       
+           
+            
+    </script>
+</html>

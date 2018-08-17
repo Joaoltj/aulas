@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Funcao</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		function teste(str,n){
+			console.log('teste',str,n);
+			console.log(this);
+		}
+		teste();
+		//mudar o valor de this
+		var obj1 = {nome:'João'};
+		var obj2 = {nome:'Santos'};
+		teste.call(obj1,'haha',1);
+		teste.apply(obj2,['haa',20]);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DCOTYPE html>
+<html>
+    <head>
+        <title>Aula 01</title>
+        <meta charset="utf-8"/>
+    </head>
+    <script>
+        
+        //Hello World
+            /*alert("Hello World");
+            document.write("<h1>Hello World</h1>");*/
+        
+        //Variaveis
+            /*var nome = "João";
+            var altura = 1.77;
+            var letra = 'J';
+            var verdade = true;
+        
+            if(nome == "João"){
+                let nome = "Maria";
+                document.write(nome+"<br>");
+            }
+            document.write(nome);
+             */
+        
+        //Contante
+            //const IDADE = 16;
+            //IDADE = 18;
+        
+        //Funções 
+            /*alert(subtrai(10,3));
+            var soma = function(a,b){
+                return a+b;
+            }
+            document.write(soma(5,5));
+        
+            function subtrai(a,b){
+                return a-b;
+           } */
+        
+     
+      /*  function calculadora(numA,numB,op){
+            if(op == "somar"){
+                return numA+numB;
+            }else if(op == "subtrair"){
+                return numA-numB;
+            }else if(op == "multiplicar"){
+                return numA*numB;   
+            }else if(op == "dividir"){
+                return numA/numB;
+            }else{
+                return "Erro";
+            }
+        }
+        document.write("Somar"+calculadora(5,10,"somar")+"<br>");
+        document.write("subtrair"+calculadora(10,5,"subtrair")+"<br>");
+        document.write("dividir"+calculadora(20,10,"dividir")+"<br>");
+        document.write("Multiplicar"+calculadora(10,10,"multiplicar")+"<br>");
+        
+        */
+        
+        /*var nome = "joao";
+        
+        switch(nome){
+            case "joao":
+                alert("Case 1");
+            break;
+            case "maria":
+                alert("Case 2");
+            break;
+            default:
+                alert("Default");
+        
+        }
+        */
+        
+        
+        
+        //var cores = ["Vermelho","Azul","Verde"];
+        //document.write(cores[0]);
+        
+        //var cores2 = new Array("Vermelho","Azul","Verde");
+        
+        //Objeto
+        /*var nome ="João";
+        var sobrenome = "Santos";
+        var idade = 17;
+        
+        var usuario={
+            nome:"João",
+            sobrenome:"Sobrenome",
+            idade:33
+        };
+        
+        var usuario2 = new Object();
+        usuario2.nome = "João2";
+        usuario2.sobrneome = "santos2";
+        usuario2.idade = 16;
+        
+       // document.write(usuario.nome);
+        console.log(usuario,usuario2);
+       
+        var lista = [usuario,usuario2];
+        
+        
+        console.log(lista);
+        */
+        
+       // for(var i =0;i<lista.length;i++ ){
+        ///    document.write(lista[i].nome);
+       // }
+        
+        
+        //for(let c in lista){
+      //    document.write(lista[c].nome);
+        //}
+        
+        
+      //  for(usuario of lista){
+          // document.write( usuario.nome);
+        //}
+        
+        //var i = 1;
+        
+        //while(i <= 100){
+          //  document.write(i+"<br>");  
+            //i++;
+        //}
+        //i = 1;
+        
+      var lista = new Array();
+        var sair = false;
+        var i =0;
+        do{
+            let usuario = new Object();
+            let op = prompt("Deseja inserir um usuario?sim ou não");
+            if(op == "não" || op == "nao"){
+               sair = true;
+            }else{
+                usuario.email = prompt("Digite o email: ")
+                usuario.senha = prompt("Digite a senha: ")
+                lista[i] =usuario;
+                i++;
+                
+            }
+          
+        }while(sair == false);
+        document.write("<table border='1px'><tr><th>Email</th><th>Senha</th></tr>");
+        for(u of lista){
+             document.write("<tr><td>"+u.email+"</td>");
+            document.write("<td>"+u.senha+"</td></tr>");
+        }
+        
+    
+        
+        var usuario    = {tipo:null,numero:null};
+        var computador = {tipo:null,numero:null};
+        
+        usuario.tipo   = prompt("Par ou ímpar?(impar ou par)");
+        usuario.tipo = usuario.tipo.toLowerCase();
+        
+        if(usuario.tipo == "impar" ||  usuario.tipo == "par"){
+            usuario.numero    = parseInt(prompt("Qual é seu número?"));
+            computador.numero = Math.floor(Math.random()*11)
+            
+           if(usuario.tipo == "impar" ){
+              computador.tipo = "par";
+              
+            }else{
+                computador.tipo = "impar";
+            }
+            
+            
+            document.write("<table border='1px'><tr><th>Jogador</th><th>Opção</th><th>Número</th>");
+              document.write("<tr><td>Usuario</td><td>"+usuario.tipo+"</td><td>"+usuario.numero+"</td></tr>");
+              document.write("<tr><td>Computador</td><td>"+computador.tipo+"</td><td>"+computador.numero+"</td></tr>");
+            
+            let soma = usuario.numero+computador.numero;
+            let resposta = soma%2==0?"par":"impar";
+            if(resposta == usuario.tipo){
+               alert("Você venceu :)");
+            }else{
+                alert("Você perdeu :("); 
+            }
+            
+            
+        }else{
+            alert("Resposta inválida!");
+        }
+        
+        
+       
+class Animal{
+    constructor(nome,raca){
+        this.nome = nome ;
+        this.raca = raca || '';
+    }
+            
+                                              
+    get html(){
+        let html = `
+            <h1>${this.nome}</h1>
+            <h2>${this.raca}</h2>`;
+            
+            return html;
+    }
+    
+    static andar(){
+        alert("Andando....");
+    }
+}
+class Cachorro extends Animal{
+     constructor(nome,raca){
+        super(nome,raca);
+     }
+  }
+      
+class Gato extends Animal{
+    constructor(nome,raca){
+        super(nome,raca);
+    }
+}
+        
+var ronald = new Cachorro('Thuchucao','Pitch');
+        Animal.andar();
+        
+document.write(ronald.html);
+        
+    </script>
+    <body >
+        
+        
+        <div id="nomeUsuario" class="nome-usuario">
+        </div>
+        <div id="nomeUsuario" class="nome-usuario">
+        </div>
+        
+        <script>
+            let nome = "João";
+            document.getElementById("nomeUsuario").innerHTML= nome;
+           let elementos = document.getElementsByClassName("nome-usuario");
+            
+            for(let item of elementos){
+                item.innerHTML += "MARIA";
+            }
+            
+            console.log(elementos);
+        </script>
+        
+    </body>
+</html>

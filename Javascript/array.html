@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Array</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var arr = new Array(6,7,8,9,10);
+		var arr2 = ['1',2,3,4,5,'hhhh',2,"30"];
+
+		var soNUmero = arr2.every(function(el,indice,obj){
+			return typeof el == 'number';
+		});
+
+
+		var aoMenosUm = arr2.some(function(el,indice,obj){
+
+			return typeof el == 'number';
+		});
+
+		var numeros = arr2.filter(function(el,i,arr){
+			return typeof el === 'number';
+		});
+		arr2.forEach(function(el,i,arr){
+			// console.log(el);
+		});
+		// console.log(soNUmero);
+		// 		console.log(aoMenosUm);
+		// 		console.log(numeros);
+
+		//console.log(arr2);
+		var posicao = arr2.indexOf('hhhh');
+//console.log(posicao);
+		var posicao2 = arr2.lastIndexOf(2);
+	// console.log(posicao2);
+
+		var novoNumeros = numeros.map(function(e,i,arr){
+			return e * i;
+		});
+		// console.log(novoNumeros);
+
+		var arr3 = arr2.concat(novoNumeros,'ola','mundo');
+		// console.log(arr3);
+
+		var str = arr2.join('');
+		// console.log(str);
+
+		//insere no final
+		arr3.push('João','joao');
+		// console.log(arr3)
+		var ultimoItemRemovido = arr3.pop();
+		// console.log(ultimoItemRemovido);
+
+		var primeiroItemRemovido = arr3.shift();
+		// console.log(primeiroItemRemovido);
+
+		//insere no inicio
+		arr3.unshift('Olá','Mundo');
+		// console.log(arr3);
+	//	console.log(numeros);
+		numeros.shift();
+
+		var somaDeArray = numeros.reduce(function(anterior,atual,indice,arr){
+
+				return anterior+atual;
+
+		},10);
+		//|valor inicial
+		//console.log(somaDeArray);
+
+		// reduceRight - inverte
+		var testeReduce = ['1','2','3','4','5'].reduceRight(function(anterior,atual){
+
+					return anterior+atual;
+
+		});
+
+
+	//	console.log(testeReduce);
+
+
+		//inverte valores
+		//console.log([10,20,30,40].reverse());
+		//console.log(arr);
+		var body = document.querySelector('body');
+		for(let i =0;i<1000;i++){
+			body.innerHTML+= "\n<p>z</p>";
+		}
+
+		var pedacoDaArray = arr.slice(0,2);
+	//	console.log(pedacoDaArray);
+
+		console.log(arr);
+		//splice(incio,quantosVAiExcluir,quem vai colocar);
+		arr.splice(4,4,'limao','mela');
+			console.log(arr);
+			
+
+	</script>
+</body>
+</html>

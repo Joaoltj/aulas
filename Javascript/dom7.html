@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notas</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<table class="table table-dark table-striped" >
+		<thead >
+			<tr>
+				<th>Aluno</th>
+				<th>Nota 1</th>
+				<th>Nota 2</th>
+				<th>Nota 3</th>
+
+					<th>Nota 4</th>
+
+				<th>Média</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!--tr>
+				<td>José Campos</td>
+				<td class="n1">10.0</td>
+				<td class="n2">10.0</td>
+				<td class="n3">10.0</td>
+				<td class="n4">10.0</td>
+				<td class="media"></td>
+			</tr>
+				<tr>
+				<td>João Santos</td>
+				<td class="n1">10.0</td>
+				<td class="n2">10.0</td>
+				<td class="n3">10.0</td>
+				<td class="n4">10.0</td>
+				<td class="media"></td>
+			</tr>
+				<tr>
+				<td>Larissa Santos</td>
+				<td class="n1">7.0</td>
+				<td class="n2">7.2</td>
+				<td class="n3">9.5</td>
+				<td class="n4">2.0</td>
+				<td class="media"></td>
+			</tr>
+			</tr>
+				<tr>
+				<td>Antonia da Silva</td>
+				<td class="n1">3.0</td>
+				<td class="n2">5.0</td>
+				<td class="n3">2.0</td>
+				<td class="n4">8.0</td>
+				<td class="media"></td>
+			</tr>
+			</tr>
+				<tr>
+				<td>Carlos Batista</td>
+				<td class="n1">7.0</td>
+				<td class="n2">8.0</td>
+				<td class="n3">4.0</td>
+				<td class="n4">9.0</td>
+				<td class="media"></td>
+			</tr>
+			</tr>
+			<tr>
+				<td>Maria Silva</td>
+				<td class="n1">6.0</td>
+				<td class="n2">6.0</td>
+				<td class="n3">6.0</td>
+				<td class="n4">6.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Francisco Antonio</td>
+				<td class="n1">9.0</td>
+				<td class="n2">9.0</td>
+				<td class="n3">8.5</td>
+				<td class="n4">9.5</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Rodolfo dos Santos</td>
+				<td class="n1">1.0</td>
+				<td class="n2">2.0</td>
+				<td class="n3">3.0</td>
+				<td class="n4">10.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Maria Silva</td>
+				<td class="n1">10.0</td>
+				<td class="n2">10.0</td>
+				<td class="n3">10.0</td>
+				<td class="n4">10.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Miro no teu cú</td>
+				<td class="n1">6.0</td>
+				<td class="n2">6.0</td>
+				<td class="n3">6.0</td>
+				<td class="n4">6.0</td>
+				<td class="media"></td>
+			</tr -->
+
+				<tr>
+				<td>Gustavo Leonardo</td>
+				<td >8.0</td>
+				<td>8.0</td>
+				<td>8.0</td>
+				<td>8.0</td>
+
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Gustavo Leonardo</td>
+				<td >5.12</td>
+				<td>8.0</td>
+				<td>7.75</td>
+				<td>8.0</td>
+				<td class="media"></td>
+			</tr>
+			<tr>
+				<td>Gustavo Leonardo</td>
+				<td >8.0</td>
+				<td>8.0</td>
+				<td>8.0</td>
+				<td>8.0</td>
+
+				<td class="media"></td>
+			</tr>
+				<tr>
+				<td>Gustavo Leonardo</td>
+				<td >10.0</td>
+				<td>0.0</td>
+				<td>10.0</td>
+				<td>10.0</td>
+
+				<td class="media"></td>
+			</tr>
+
+		</tbody>
+	</table>
+<script type="text/javascript">
+	var $tds = document.querySelectorAll("td");
+	var quantidadeDeNotas =0;
+	var notas = retornarNotas($tds);
+	calcularMedia(notas,quantidadeDeNotas);
+
+	function retornarNotas($tds){
+		let aux = 0;
+		let lista = [];
+
+		for(let n of $tds){
+			if(!isNaN(n.textContent) && n.textContent !== ''){
+
+				if(n.textContent < 6){
+				mudarCor(n,"#c0392b");
+				}
+				lista.push(parseFloat(n.textContent));
+				if(aux == 1){
+						quantidadeDeNotas++;
+				}
+			}else{
+				aux++;
+			}
+		}
+		return lista;
+ 	}
+
+ 	function calcularMedia(l,n){
+ 		let $medias = document.querySelectorAll(".media");
+
+ 		let soma =0;
+ 		let x =0;
+		let nota0 = false
+ 		for(let m of $medias){
+ 			for(let i = 0;i<n;i++){
+				if(l[x] === 0){
+					nota0= true;
+
+				}
+ 				 	soma += l[x];
+ 				x++;
+
+ 			}
+ 			let final = soma /n;
+ 			if(final == 10){
+ 			mudarCor(m,"#27ae60");
+ 			}else if(final < 6){
+				mudarCor("#e74c3c");
+ 			}else{
+ 				mudarCor(m,"#2980b9");
+ 			}
+ 			m.textContent=final.toFixed(2);
+
+			if(nota0 === true){
+					mudarCor(m,"#e74c3c");
+					m.textContent="Reprovado";
+			}
+
+ 			soma =0;
+
+
+ 		}
+ 	}
+
+	function mudarCor($td,cor){
+			$td.style.background = cor;
+	}
+
+</script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>

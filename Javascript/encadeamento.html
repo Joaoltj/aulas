@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Encadeamentp</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		var obj = {
+			value:1,
+			add: function(n){
+				this.value += n;
+				return this;
+			},
+			log:function(){
+				console.log(this.value);
+				return this;
+			}
+		};
+		obj.add(1).log();
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lista de Tarefa</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="form-group">
+				<input type="text" name="tarefa" id="tarefa">
+				<button id="btn">Cadastrar Tarefa</button>
+			</div>
+		</div>
+		<ul>
+			<li>Estudar Javascript - DOM</li>
+			<li>Estudar Evento em Javascript</li>
+			<li>Jogar video-game</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var $ul = document.querySelector('ul');
+		var $tarefa = document.querySelector('#tarefa');
+		var $btn = document.querySelector('#btn');
+
+		$btn.addEventListener('click',function(){
+			if($tarefa.value){
+				var tarefa = '<li>'+$tarefa.value+'</li>';
+				$ul.innerHTML += tarefa;
+				$tarefa.value = '';
+				$tarefa.focus();
+			}
+		});
+	</script>
+</body>
+</html>

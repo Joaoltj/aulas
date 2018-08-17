@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Estilização</title>
+    </head>
+    <style>
+        .teste{
+            background:red;
+        }
+    </style>
+    <body>
+        <div class='teste'>Apenas um teste</div>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <p>Esse é apenas um paragráfos que não mostra extamente nada e você é um bobo por ler</p>
+        <div class='teste2'></div>
+        <script>
+            var $teste =  document.querySelector('.teste');
+            var $teste2 =  document.querySelector('.teste2');
+            var $p = document.querySelector('p');
+           
+                                    //só pega inline
+            console.log('bg: ',$teste.style.background);
+
+            console.log('computado: ',getComputedStyle($teste).background);
+
+            console.log('Largura em relação ao documento :',$p.offsetWidth);
+            console.log('Altura em relação ao documento: ',$p.offsetHeight);
+            console.log('Topo: ',$p.offsetTop);
+            console.log('Left',$p.offsetLeft)
+
+            console.log('Left da div: ',$teste2.offsetLeft);
+            console.log('Topo da Div: ',$teste2.offsetTop);
+
+            console.log('informações relativa ao elemento no espaço da viewport',$teste2.getBoundingClientRect());
+         
+        
+        </script>
+    </body>
+</html>

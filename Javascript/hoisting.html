@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hoisting</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<script>
+
+		var nome = "João";
+
+		function mostrarNome(){
+
+			console.log(nome);
+			var nome = "Santos";
+
+			console.log('------');
+			console.log(testeHoisting());
+
+			function testeHoisting(){
+				return 'Enois';
+			}
+			
+		}
+		mostrarNome();
+	</script>
+</body>
+</html>

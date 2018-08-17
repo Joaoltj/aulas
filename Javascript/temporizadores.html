@@ -1,0 +1,43 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h2>Relógio</h2>
+        <h4></h4>
+        <div class="pop">Ola</div>
+    </body>
+    <script>
+        var $h4 = document.querySelector("h4");
+        var n = 0;
+            
+            function somaUm(){
+                console.log('n', ++n);
+                
+                if(n >= 10){
+                    clearInterval(intervalo);
+                }
+            }
+            
+            var timeout = setTimeout(somaUm, 1000);
+            alert(timeout)
+            
+            var intervalo = setInterval(somaUm, 1000);
+            
+            console.log(intervalo)
+            
+            var str = '';
+           
+            var timeoutTeste = setTimeout(function(){
+                
+                for (var i = 0; i < 1000; i++){
+                    str += "i: " + i + " -- ";
+                    $h4.textContent += str;
+                }
+                
+            }, 3000)
+
+        
+        
+    </script>
+</html>

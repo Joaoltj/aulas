@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Date</title>
+    </head>
+    <body>
+
+    </body>
+    <script type="text/javascript">
+
+        var data = new Date();
+       // console.log(minhaData);
+
+       var diaDaSemana = data.getDay();
+       console.log("Dia da Semana:",diaDaSemana);
+
+       var dia = data.getDate();
+       console.log("Dia",dia);
+
+       var mes = data.getMonth();
+       console.log('Mês',mes);
+
+       var numeroDeAnoDpsDe1900 = data.getYear();
+       console.log("Numeros dps de ano de 1900",numeroDeAnoDpsDe1900)
+        
+       var ano = data.getFullYear();
+       console.log('Ano',ano);
+
+       var hora =  data.getHours();
+       console.log('Horas:',hora)
+
+       var minutos = data.getMinutes();
+       console.log('Minutos',minutos);
+
+       var segundos = data.getSeconds();
+       console.log('segundos',segundos);
+
+        var numeroDemlSegundosApartirde1970 = data.getTime();
+        console.log("Numero de milisegundo apartir de 1970",numeroDemlSegundosApartirde1970);  
+        
+        //data = new Date(ano,mes,dia,hora,minuto,segundo,milisegundos);
+
+
+    </script>
+</html>

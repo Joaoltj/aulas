@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Encapsulamento</title>
+</head>
+<body>
+	<script type="text/javascript">
+		
+		(function(){
+
+			var ola = "ola";
+
+			function mostrarOla(){
+				console.log(ola);
+			}
+			window.mostrarOla = mostrarOla;
+
+
+		})()
+
+
+	</script>
+</body>
+</html>
